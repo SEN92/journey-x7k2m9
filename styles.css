@@ -1,0 +1,72 @@
+/* ==========================================================================
+   styles.css
+   هذا الملف يغطي فقط:
+   1) إعادة ضبط أساسية (reset) للصفحة قبل تحميل React
+   2) شاشة التحميل التي تظهر أثناء ترجمة Babel للكود (تختفي تلقائياً بعد
+      أن يُركّب React عنصر اللعبة الفعلي داخل <div id="root">)
+
+   كل أنماط اللعبة نفسها (الخريطة، البطاقات، الألوان الصناعية، إلخ) مُضمّنة
+   داخل مكوّن React نفسه (HSEJourney.browser.jsx) عبر وسم <style> داخلي،
+   حتى يبقى الملف الواحد (المكوّن) مكتفياً ذاتياً بصرياً.
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #0d1b2a;
+  font-family: 'Cairo', sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* -------------------- شاشة التحميل -------------------- */
+
+#loading-screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: #f5f3ee;
+  text-align: center;
+  padding: 20px;
+}
+
+.loading-badge {
+  font-family: 'Rajdhani', sans-serif;
+  letter-spacing: 3px;
+  font-size: 12px;
+  color: #f0a500;
+  font-weight: 700;
+}
+
+.loading-title {
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.loading-hint {
+  font-size: 13px;
+  color: #a8b6c4;
+}
+
+.loading-spinner {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 3px solid rgba(245, 243, 238, 0.15);
+  border-top-color: #f0a500;
+  animation: spin 0.9s linear infinite;
+  margin: 6px 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
